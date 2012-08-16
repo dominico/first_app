@@ -22,16 +22,12 @@ end
 
 
 
-group :development do
-  gem 'taps'
-  gem 'rvm'
+group :production, :staging do
+  gem "pg"
 end
 
-
-gem 'sqlite3', :group => [:development, :test]
-group :production do
-  gem 'thin'
-  gem 'pg'
+group :development, :test do
+  gem "sqlite3-ruby", :require => "sqlite3"
 end
 
 
